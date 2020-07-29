@@ -8,13 +8,13 @@ import Capacitor
 @objc(FileDownloader)
 public class FileDownloader: CAPPlugin {
 
-    @objc func echo(_ call: CAPPluginCall) {
+    @objc func download(_ call: CAPPluginCall) {
         let url = call.getString("url") ?? ""
         let filename = call.getString("filename") ?? ""
         let dir = call.getString("dir") ?? ""
 
         call.success([
-            "url": url
+            "url": url + filename
         ])
     }
 }

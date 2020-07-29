@@ -45,15 +45,16 @@ public class FileDownloader extends Plugin{
     //获取权限
     private void requestPermissions() {
 
-        if (!this.hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+        if (!this.hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) && !this.hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE)) {
             this.pluginRequestPermissions(
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},
                     PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
         }
     }
 
     //下载文件
     private void downloadFile(final PluginCall call) {
+        Toast.makeText(mContext, "开始下载", Toast.LENGTH_SHORT).show();
         String url = call.getString("url","");
         String filename = call.getString("filename","");
         String dir = call.getString("dir","");
@@ -69,12 +70,9 @@ public class FileDownloader extends Plugin{
         request.setVisibleInDownloadsUi(true);
 
         //设置下载的路径
-        pathstr = dir;
-        if(dir == "") {
-            File file = new File(mContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), filename);
-            request.setDestinationUri(Uri.fromFile(file));
-            pathstr = file.getAbsolutePath();
-        }
+        File file = new File(mContext.getExternalFilesDir(""), filename);
+        request.setDestinationUri(Uri.fromFile(file));
+        pathstr = file.getAbsolutePath();
 
         //获取DownloadManager
         if (downloadManager == null)
@@ -119,7 +117,8 @@ public class FileDownloader extends Plugin{
                     //下载完成
                     cursor.close();
                     JSObject ret = new JSObject();
-                    ret.put("Message", pathstr);
+                    ret.put("path", pathstr);
+                    Toast.makeText(mContext, "下载成功", Toast.LENGTH_SHORT).show();
                     _call.success(ret);
                     break;
                 //下载失败
