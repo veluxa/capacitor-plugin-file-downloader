@@ -1,6 +1,10 @@
 # capacitor-plugin-file-downloader
 file download for capacitor
 
+
+![android](https://img.shields.io/badge/android-pass-green)
+![ios](https://img.shields.io/badge/ios-pass-green)
+
 一个简单的ionic capacitor 文件下载 native 插件，支持android、ios
 
 > **安装**：
