@@ -5,5 +5,5 @@ declare module '@capacitor/core' {
 }
 
 export interface FileDownloaderPlugin {
-  download(options: { url: string, filename: string, dir: string }): Promise<any>;
+  download(options: { url: string, filename: string }): Promise<any>;
 }

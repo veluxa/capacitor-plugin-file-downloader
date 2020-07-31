@@ -9,7 +9,7 @@ export class FileDownloaderWeb extends WebPlugin implements FileDownloaderPlugin
     });
   }
 
-  async download(options: { url: string, filename: string, dir: string }) {
+  async download(options: { url: string, filename: string }) {
     return options
   }
 }

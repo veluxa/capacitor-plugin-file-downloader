@@ -1,4 +1,4 @@
-package com.max.plugins.filedownloader;
+package com.veluxa.plugins;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
@@ -15,7 +15,6 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
-import android.widget.Toast;
 
 import java.io.File;
 
@@ -54,10 +53,8 @@ public class FileDownloader extends Plugin{
 
     //下载文件
     private void downloadFile(final PluginCall call) {
-        Toast.makeText(mContext, "开始下载", Toast.LENGTH_SHORT).show();
         String url = call.getString("url","");
         String filename = call.getString("filename","");
-        String dir = call.getString("dir","");
 
         //创建下载任务
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
@@ -65,7 +62,7 @@ public class FileDownloader extends Plugin{
         request.setAllowedOverRoaming(false);
         //在通知栏中显示，默认就是显示的
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-        request.setTitle("消防技服网");
+        request.setTitle("文件下载器");
         request.setDescription(filename + "下载中...");
         request.setVisibleInDownloadsUi(true);
 
@@ -118,12 +115,10 @@ public class FileDownloader extends Plugin{
                     cursor.close();
                     JSObject ret = new JSObject();
                     ret.put("path", pathstr);
-                    Toast.makeText(mContext, "下载成功", Toast.LENGTH_SHORT).show();
                     _call.success(ret);
                     break;
                 //下载失败
                 case DownloadManager.STATUS_FAILED:
-                    Toast.makeText(mContext, "下载失败", Toast.LENGTH_SHORT).show();
                     cursor.close();
                     mContext.unregisterReceiver(receiver);
                     _call.reject("下载失败");

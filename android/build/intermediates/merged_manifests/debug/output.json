@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "com.max.plugins.filedownloader.capacitorpluginfiledownloader",
+  "applicationId": "com.veluxa.plugins.capacitorpluginfiledownloader",
   "variantType": "LIBRARY",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "../../library_manifest/debug/AndroidManifest.xml",
       "properties": {
-        "packageId": "com.max.plugins.filedownloader.capacitorpluginfiledownloader",
+        "packageId": "com.veluxa.plugins.capacitorpluginfiledownloader",
         "split": ""
       }
     }

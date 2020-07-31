@@ -1,7 +1,7 @@
 {
   "name": "capacitor-plugin-file-downloader",
-  "version": "0.0.1",
-  "description": "file download for capacitor",
+  "version": "0.0.2",
+  "description": "FileDownloader",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -14,12 +14,12 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "author": "max",
+  "author": "veluxa",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^2.3.0",
-    "@capacitor/core": "^2.3.0",
-    "@capacitor/ios": "^2.3.0",
+    "@capacitor/android": "^2.4.0",
+    "@capacitor/core": "^2.4.0",
+    "@capacitor/ios": "^2.4.0",
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
@@ -31,7 +31,7 @@
     "typescript": "~3.8.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^2.3.0"
+    "@capacitor/core": "^2.4.0"
   },
   "files": [
     "dist/",

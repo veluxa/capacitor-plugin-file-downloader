@@ -1,4 +1,4 @@
-com.max.plugins.filedownloader.capacitorpluginfiledownloader
+com.veluxa.plugins.capacitorpluginfiledownloader
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -2623,7 +2623,6 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_inflatedId android_layout
 styleable bridge_fragment start_dir
-xml file_paths
 xml image_share_filepaths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end

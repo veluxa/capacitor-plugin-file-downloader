@@ -3425,7 +3425,6 @@ int styleable ViewStubCompat_android_inflatedId 1
 int styleable ViewStubCompat_android_layout 2
 int[] styleable bridge_fragment { 0x0 }
 int styleable bridge_fragment_start_dir 0
-int xml file_paths 0x0
 int xml image_share_filepaths 0x0
 int xml standalone_badge 0x0
 int xml standalone_badge_gravity_bottom_end 0x0
