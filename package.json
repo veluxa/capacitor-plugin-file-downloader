@@ -56,9 +56,9 @@
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": "http://github.com/veluxa/capacitor-plugin-file-downloader"
+    "url": "https://github.com/0xda203/capacitor-plugin-file-downloader"
   },
   "bugs": {
-    "url": "http://github.com/veluxa/capacitor-plugin-file-downloader/issues"
+    "url": "https://github.com/0xda203/capacitor-plugin-file-downloader/issues"
   }
 }
